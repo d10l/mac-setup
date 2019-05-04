@@ -67,7 +67,6 @@ rake
 
 > **NOTE:** the rake command will install all dependencies needed.
 
-
 ## VIM Basics
 
 * [Delete from cursor to end of line on VI](https://unix.stackexchange.com/questions/4415/delete-from-cursor-to-end-of-line-on-vi)

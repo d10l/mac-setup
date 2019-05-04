@@ -73,7 +73,7 @@ Changing theme is as simple as changing a string in your configuration file.
 The default theme is `robbyrussell`. Just change that value to change theme,
 and don't forget to apply your changes.
 
-[Install](https://gist.github.com/denseidel/c8e46d9cab1462e6c086c4b8bb55ff90) the [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k) by running 
+[Install](https://gist.github.com/denseidel/c8e46d9cab1462e6c086c4b8bb55ff90) the [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k) by running:
 
 ```sh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k

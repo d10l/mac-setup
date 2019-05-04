@@ -39,7 +39,7 @@ Follow the [Basics Tips & Tricks](https://github.com/Microsoft/vscode-tips-and-t
   - Security: https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/security
   - Add this to your config: `"liveshare.guestApprovalRequired": true`
 
-
 ## Python Setup
+
   - https://realpython.com/python-development-visual-studio-code/
   - https://fedoramagazine.org/vscode-python-howto/
