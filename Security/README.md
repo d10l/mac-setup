@@ -42,7 +42,6 @@ The following steps were taken from the [official apple support page](https://su
 4. Click Turn On FileVault.
 5. Follow the instructions. In my opinion you should create a local and offline possibility to disable encryption, when you are asked how to regain access in case of anything.
 
-
 ## Config & Keybase
 
 also add terraform  
@@ -53,7 +52,7 @@ also add terraform
 
 You don't want to store your secrets in plain text in a file like `.rshrc`  therefore you can use lpass cli \[[github](https://github.com/lastpass/lastpass-cli) / [documentation](https://helpdesk.lastpass.com/lastpass-command-line-application/)\] and store your secrets in your osx keychain and access them only by reference.
 
-#### Installation
+### Installation
 
 ```bash
 brew install lastpass-cli --with-pinentry
@@ -77,8 +76,6 @@ Just create a secret note within lastpass:
 export AWS_ACCESS_KEY_ID=$(lpass show aws-serverless-devops --username)
 export AWS_SECRET_ACCESS_KEY=$(lpass show aws-serverless-devops --password)
 ```
-
-
 
 ### Accessing files in lpass
 
