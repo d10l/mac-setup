@@ -52,6 +52,7 @@ suggestions. Always choose the setting that makes the most sense to you.**
 
 - Enable _repeating keys by pressing and holding down keys_ for terminal & visual studio code: `defaults delete -g ApplePressAndHoldEnabled && defaults write -app Terminal ApplePressAndHoldEnabled -bool false && defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false` (and restart any app
   that you need to repeat keys in)
+- Show all hidden files `defaults write com.apple.finder AppleShowAllFiles YES`
 
 ## How to write to NTFS on macOS Yosemite (10.10) and El Capitan (10.11)
 
