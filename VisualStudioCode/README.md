@@ -1,19 +1,45 @@
-# Sublime Text
+# Visual Studio Code
 
-[Sublime Text](http://www.sublimetext.com/) is a widely used editor that describes it self as _a sophisticated text editor for code, markup and prose_.
+[Visual Studio Code](http://www.sublimetext.com/) is a widely used editor.
 
 ## Installation
 
-[Download](http://www.sublimetext.com/) the **.dmg** file and drag-and-drop it to the **Applications** folder.
+If you followed the Homebrew Cask Section it should be installed otherwiese:
 
-## Use CLI to open file
+```sh
+brew cask install visual-studio-code
+```
 
-Let's create a shortcut so we can launch Sublime Text from the command-line
+## fn keys in touchbar
 
-    $ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+- Go to __Apple > System Preferences__
+- Select the __Keyboard__ preference pane
+- Click on the __Shortcuts__ tab
+- In the left sidebar, select the __Function Keys__ option
+- On the right-hand side click on the plus `+` button
+- Select the Visual Studio Code app
+- Add the app
 
-Now you can open a file with `$ subl myfile.py` or start a new project in the current directory with `$ subl .`.
+## Configuration & Basics
 
-## Pricing
+With the [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync&WT.mc_id=vscode-smashing-buhollan) extension, you can export all of your VS Code settings to a Gist, and then pull them all down from another VS Code installation and have them immediately applied. `Install the extension` > Call `F12` and search for `sync` > configure with your github key and then download your configuration.
 
-Sublime Text is not free but it has an unlimited evaluation period that comes with notification pop-ups asking you to buy it, if you wish to remove the pop-ups you can purchase the tool [here](http://www.sublimetext.com/buy).
+Follow the [Basics Tips & Tricks](https://github.com/Microsoft/vscode-tips-and-tricks) including installing the __CLI Tool__.
+
+## Configure VS Code for your Language
+
+- [Awesome VSCode with settings for different language](https://github.com/viatsko/awesome-vscode)
+- [vscode-recipes](https://github.com/Microsoft/vscode-recipes): for Debugging different languages JS, React, Typescript, Docker
+
+## Extensions
+
+- Debugging Client and Server with [Compound Launch Configurations](https://code.visualstudio.com/docs/editor/debugging) and Debug with mid-line breakpoints promises with Column Breakpoints
+- Paring with Visual Studio Live Share
+  - More Info: https://code.visualstudio.com/blogs/2017/11/15/live-share
+  - Security: https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/security
+  - Add this to your config: `"liveshare.guestApprovalRequired": true`
+
+
+## Python Setup
+  - https://realpython.com/python-development-visual-studio-code/
+  - https://fedoramagazine.org/vscode-python-howto/

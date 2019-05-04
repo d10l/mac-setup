@@ -158,3 +158,18 @@ That covers new repo creation, and cloning, but we haven’t addressed the probl
 OR
 
 If you want to go “all in” and ensure that every repo has the proper hooks, here’s a [script](https://gist.github.com/iAmNathanJ/0ae03dcb08ba222d36346b138e83bfdf) that will recursively walk a directory, such as `~/Projects` and run `git secrets --install` in all repos.
+
+
+## Git Best Pratices
+
+Read [Single Branch Development with Git](https://medium.com/learn-git-today/single-branch-development-with-git-f72a052446cf) and [global commit messages](https://eidson.info/post/using-conventional-commit-messages-globally) following the [angular commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines).
+
+### [Github CLI](https://hub.github.com/)
+
+Install:
+
+```bash
+brew install hub
+# https://hub.github.com/hub.1.html
+git config --global hub.protocol https
+```

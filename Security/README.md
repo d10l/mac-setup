@@ -41,3 +41,55 @@ The following steps were taken from the [official apple support page](https://su
 3. Click the Lock button, then enter an administrator name and password.
 4. Click Turn On FileVault.
 5. Follow the instructions. In my opinion you should create a local and offline possibility to disable encryption, when you are asked how to regain access in case of anything.
+
+
+## Config & Keybase
+
+also add terraform  
+
+## LastPass
+
+## Securely store your keys and secrets
+
+You don't want to store your secrets in plain text in a file like `.rshrc`  therefore you can use lpass cli \[[github](https://github.com/lastpass/lastpass-cli) / [documentation](https://helpdesk.lastpass.com/lastpass-command-line-application/)\] and store your secrets in your osx keychain and access them only by reference.
+
+#### Installation
+
+```bash
+brew install lastpass-cli --with-pinentry
+```
+
+#### Set variables in lastpass
+
+Just create a secret note within lastpass:
+
+<img src="./add-secret-to-lastpass.png" width="80%">
+
+#### Login to lpass in the command line
+
+```bash
+# login to lastpass# check first if I am allready loggedin and finded the "access-token" folder if [[ $(lpass ls) != *"access-token"* ]]; thenlpass login your@email.comfi
+```
+
+#### Set environment variable \(e.g. key\_id \(username\) and secret\(password\)
+
+```bash
+export AWS_ACCESS_KEY_ID=$(lpass show aws-serverless-devops --username)
+export AWS_SECRET_ACCESS_KEY=$(lpass show aws-serverless-devops --password)
+```
+
+
+
+### Accessing files in lpass
+
+```text
+lpass show xxx-dev-gcp --attach att-7942806310206912061-56085
+```
+
+### Setup an ecrypted folder and sync with google drive
+
+```text
+/Users/den/Desktop/secret/xxx/key.json
+lock-secret-files
+unlock-secret-files
+```
