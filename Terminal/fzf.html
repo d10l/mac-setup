@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Homebrew · macOS Setup Guide</title>
+        <title>fzf · macOS Setup Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Usage.html" />
+    <link rel="next" href="ack.html" />
     
     
-    <link rel="prev" href="../Xcode/" />
+    <link rel="prev" href="tree.html" />
     
 
     </head>
@@ -125,9 +125,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../Homebrew/">
             
-                <a href="./">
+                <a href="../Homebrew/">
             
                     
                     Homebrew
@@ -139,9 +139,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="Usage.html">
+        <li class="chapter " data-level="1.4.1" data-path="../Homebrew/Usage.html">
             
-                <a href="Usage.html">
+                <a href="../Homebrew/Usage.html">
             
                     
                     Usage
@@ -152,9 +152,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="Cask.html">
+        <li class="chapter " data-level="1.4.2" data-path="../Homebrew/Cask.html">
             
-                <a href="Cask.html">
+                <a href="../Homebrew/Cask.html">
             
                     
                     Cask
@@ -170,9 +170,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../Terminal/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../Terminal/">
+                <a href="./">
             
                     
                     Terminal
@@ -184,9 +184,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Terminal/zsh.html">
+        <li class="chapter " data-level="1.5.1" data-path="zsh.html">
             
-                <a href="../Terminal/zsh.html">
+                <a href="zsh.html">
             
                     
                     Zsh
@@ -197,9 +197,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../Terminal/tree.html">
+        <li class="chapter " data-level="1.5.2" data-path="tree.html">
             
-                <a href="../Terminal/tree.html">
+                <a href="tree.html">
             
                     
                     tree
@@ -210,9 +210,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../Terminal/fzf.html">
+        <li class="chapter active" data-level="1.5.3" data-path="fzf.html">
             
-                <a href="../Terminal/fzf.html">
+                <a href="fzf.html">
             
                     
                     fzf
@@ -223,9 +223,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../Terminal/ack.html">
+        <li class="chapter " data-level="1.5.4" data-path="ack.html">
             
-                <a href="../Terminal/ack.html">
+                <a href="ack.html">
             
                     
                     ack
@@ -652,7 +652,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Homebrew</a>
+        <a href=".." >fzf</a>
     </h1>
 </div>
 
@@ -667,29 +667,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="homebrew">Homebrew</h1>
-<p><a href="https://brew.sh/" target="_blank">Homebrew</a> calls itself <em>The missing package manager for
-macOS</em> and is an essential tool for any developer.</p>
+                                <h1 id="fzf"><code>fzf</code></h1>
+<p><a href="https://github.com/junegunn/fzf" target="_blank"><code>fzf</code></a> is a general-purpose command-line
+fuzzy finder. On it&apos;s own it&apos;s not very useful but when combined with other
+tools it becomes super powerful.</p>
 <h2 id="installation">Installation</h2>
-<p>Before you can run Homebrew you need to have the <strong>Command Line Tools</strong> for
-<strong>Xcode</strong> installed. It include compilers that will allow you to build things
-from source, and if you are missing this it&apos;s available through the App Store &gt;
-Updates.</p>
-<p>To install Homebrew run the following:
-terminal, hit <strong>Enter</strong>, and follow the steps on the screen:</p>
-<pre><code>$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre><p>One thing you need to do is tell the system to use programs installed by Hombrew
-(in <code>/usr/local/bin</code>) rather than the OS default if it exists. You do this by
-adding <code>/usr/local/bin</code> to your <code>PATH</code> environment variable (if you&apos;re using
-<code>zsh</code> you should use <code>.zshrc</code> instead of <code>.bash_profile</code>):</p>
-<pre><code>$ echo &apos;export PATH=&quot;/usr/local/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile
-</code></pre><p>Alternatively, you can also insert <code>/usr/local/bin</code> to the first line of
-<code>/private/etc/paths</code> and reboot the Mac to change global paths loading order.
-Admin password may be required if you modify the file.</p>
-<p>To be able to use <code>brew</code> you need to start a new terminal session. After that
-you should make sure everything is working by running:</p>
-<pre><code>$ brew doctor
-</code></pre><script src="../_gitbook_plugin_analytics.js"></script>
+<p>Use <a href="http://sourabhbajaj.com/mac-setup/Homebrew/README.html" target="_blank">homebrew</a> to
+install <code>fzf</code>:</p>
+<pre><code>$ brew install fzf
+</code></pre><p>If you want to use shell extensions (better shell integration):</p>
+<pre><code>$ /usr/local/opt/fzf/install
+</code></pre><p>which gives you:</p>
+<ul>
+<li>Key bindings (<code>CTRL-T</code>, <code>CTRL-R</code>, and <code>ALT-C</code>) (available for <em>bash</em>, <em>zsh</em>
+and <em>fish</em>)</li>
+<li>Fuzzy auto-completion (available for <em>bash</em> and <em>zsh</em>)</li>
+</ul>
+<h2 id="example-usages">Example Usages</h2>
+<p>Add any of these functions to your shell configuration file and apply the
+changes to try them out. Or just paste the function in your terminal if you
+just want to try it out without saving it.</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># fd - cd to selected directory</span>
+<span class="hljs-function"><span class="hljs-title">fd</span></span>() {
+  <span class="hljs-built_in">local</span> dir
+  dir=$(find <span class="hljs-variable">${1:-.}</span> -path <span class="hljs-string">&apos;*/\.*&apos;</span> -prune \
+                  -o -type d -print 2&gt; /dev/null | fzf +m) &amp;&amp;
+  <span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$dir</span>&quot;</span>
+}
+</code></pre>
+<pre><code class="lang-sh"><span class="hljs-comment"># fh - search in your command history and execute selected command</span>
+<span class="hljs-function"><span class="hljs-title">fh</span></span>() {
+  <span class="hljs-built_in">eval</span> $( ([ -n <span class="hljs-string">&quot;<span class="hljs-variable">$ZSH_NAME</span>&quot;</span> ] &amp;&amp; <span class="hljs-built_in">fc</span> <span class="hljs-_">-l</span> 1 || <span class="hljs-built_in">history</span>) | fzf +s --tac | sed <span class="hljs-string">&apos;s/ *[0-9]* *//&apos;</span>)
+}
+</code></pre>
+<p><strong>For more fuzzy search examples see the
+<a href="https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh" target="_blank">official repo</a>.</strong></p>
+<h3 id="chrome-history-from-your-terminal">Chrome history from your terminal</h3>
+<p><strong>Note</strong>: original <a href="https://junegunn.kr/2015/04/browsing-chrome-history-with-fzf/" target="_blank">blog post</a></p>
+<p>Open up your shell config and add following function:</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># ch - browse chrome history</span>
+<span class="hljs-function"><span class="hljs-title">ch</span></span>() {
+  <span class="hljs-built_in">local</span> cols sep
+  cols=$(( COLUMNS / 3 ))
+  sep=<span class="hljs-string">&apos;{::}&apos;</span>
+
+  cp <span class="hljs-_">-f</span> ~/Library/Application\ Support/Google/Chrome/Profile\ 1/History /tmp/h
+
+  sqlite3 -separator <span class="hljs-variable">$sep</span> /tmp/h \
+    <span class="hljs-string">&quot;select substr(title, 1, <span class="hljs-variable">$cols</span>), url
+     from urls order by last_visit_time desc&quot;</span> |
+  awk -F <span class="hljs-variable">$sep</span> <span class="hljs-string">&apos;{printf &quot;%-&apos;</span><span class="hljs-variable">$cols</span><span class="hljs-string">&apos;s  \x1b[36m%s\x1b[m\n&quot;, $1, $2}&apos;</span> |
+  fzf --ansi --multi | sed <span class="hljs-string">&apos;s#.*\(https*://\)#\1#&apos;</span> | xargs open
+}
+</code></pre>
+<p><strong>Note</strong>: Ensure that path to <code>History</code> file is correct; read more information
+on <a href="https://stackoverflow.com/a/16742333/1564365" target="_blank">StackOverflow</a>.</p>
+<script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
                             
@@ -716,12 +749,12 @@ you should make sure everything is working by running:</p>
 
             
                 
-                <a href="../Xcode/" class="navigation navigation-prev " aria-label="Previous page: Xcode">
+                <a href="tree.html" class="navigation navigation-prev " aria-label="Previous page: tree">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Usage.html" class="navigation navigation-next " aria-label="Next page: Usage">
+                <a href="ack.html" class="navigation navigation-next " aria-label="Next page: ack">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -732,7 +765,7 @@ you should make sure everything is working by running:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Homebrew","level":"1.4","depth":1,"next":{"title":"Usage","level":"1.4.1","depth":2,"path":"Homebrew/Usage.md","ref":"Homebrew/Usage.md","articles":[]},"previous":{"title":"Xcode","level":"1.3","depth":1,"path":"Xcode/README.md","ref":"Xcode/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"Homebrew/README.md","mtime":"2019-05-04T10:39:30.684Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-04T20:18:19.678Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"fzf","level":"1.5.3","depth":2,"next":{"title":"ack","level":"1.5.4","depth":2,"path":"Terminal/ack.md","ref":"Terminal/ack.md","articles":[]},"previous":{"title":"tree","level":"1.5.2","depth":2,"path":"Terminal/tree.md","ref":"Terminal/tree.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"Terminal/fzf.md","mtime":"2019-05-04T10:39:30.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-04T20:18:19.678Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

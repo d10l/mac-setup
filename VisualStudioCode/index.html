@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Homebrew · macOS Setup Guide</title>
+        <title>VSC · macOS Setup Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Usage.html" />
+    <link rel="next" href="../Python/" />
     
     
-    <link rel="prev" href="../Xcode/" />
+    <link rel="prev" href="../Vim/" />
     
 
     </head>
@@ -125,9 +125,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../Homebrew/">
             
-                <a href="./">
+                <a href="../Homebrew/">
             
                     
                     Homebrew
@@ -139,9 +139,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="Usage.html">
+        <li class="chapter " data-level="1.4.1" data-path="../Homebrew/Usage.html">
             
-                <a href="Usage.html">
+                <a href="../Homebrew/Usage.html">
             
                     
                     Usage
@@ -152,9 +152,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="Cask.html">
+        <li class="chapter " data-level="1.4.2" data-path="../Homebrew/Cask.html">
             
-                <a href="Cask.html">
+                <a href="../Homebrew/Cask.html">
             
                     
                     Cask
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../VisualStudioCode/">
+        <li class="chapter active" data-level="1.9" data-path="./">
             
-                <a href="../VisualStudioCode/">
+                <a href="./">
             
                     
                     VSC
@@ -652,7 +652,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Homebrew</a>
+        <a href=".." >VSC</a>
     </h1>
 </div>
 
@@ -667,29 +667,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="homebrew">Homebrew</h1>
-<p><a href="https://brew.sh/" target="_blank">Homebrew</a> calls itself <em>The missing package manager for
-macOS</em> and is an essential tool for any developer.</p>
+                                <h1 id="visual-studio-code">Visual Studio Code</h1>
+<p><a href="http://www.sublimetext.com/" target="_blank">Visual Studio Code</a> is a widely used editor.</p>
 <h2 id="installation">Installation</h2>
-<p>Before you can run Homebrew you need to have the <strong>Command Line Tools</strong> for
-<strong>Xcode</strong> installed. It include compilers that will allow you to build things
-from source, and if you are missing this it&apos;s available through the App Store &gt;
-Updates.</p>
-<p>To install Homebrew run the following:
-terminal, hit <strong>Enter</strong>, and follow the steps on the screen:</p>
-<pre><code>$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre><p>One thing you need to do is tell the system to use programs installed by Hombrew
-(in <code>/usr/local/bin</code>) rather than the OS default if it exists. You do this by
-adding <code>/usr/local/bin</code> to your <code>PATH</code> environment variable (if you&apos;re using
-<code>zsh</code> you should use <code>.zshrc</code> instead of <code>.bash_profile</code>):</p>
-<pre><code>$ echo &apos;export PATH=&quot;/usr/local/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile
-</code></pre><p>Alternatively, you can also insert <code>/usr/local/bin</code> to the first line of
-<code>/private/etc/paths</code> and reboot the Mac to change global paths loading order.
-Admin password may be required if you modify the file.</p>
-<p>To be able to use <code>brew</code> you need to start a new terminal session. After that
-you should make sure everything is working by running:</p>
-<pre><code>$ brew doctor
-</code></pre><script src="../_gitbook_plugin_analytics.js"></script>
+<p>If you followed the Homebrew Cask Section it should be installed otherwiese:</p>
+<pre><code class="lang-sh">brew cask install visual-studio-code
+</code></pre>
+<h2 id="fn-keys-in-touchbar">fn keys in touchbar</h2>
+<ul>
+<li>Go to <strong>Apple &gt; System Preferences</strong></li>
+<li>Select the <strong>Keyboard</strong> preference pane</li>
+<li>Click on the <strong>Shortcuts</strong> tab</li>
+<li>In the left sidebar, select the <strong>Function Keys</strong> option</li>
+<li>On the right-hand side click on the plus <code>+</code> button</li>
+<li>Select the Visual Studio Code app</li>
+<li>Add the app</li>
+</ul>
+<h2 id="configuration--basics">Configuration &amp; Basics</h2>
+<p>With the <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync&amp;WT.mc_id=vscode-smashing-buhollan" target="_blank">Settings Sync</a> extension, you can export all of your VS Code settings to a Gist, and then pull them all down from another VS Code installation and have them immediately applied. <code>Install the extension</code> &gt; Call <code>F12</code> and search for <code>sync</code> &gt; configure with your github key and then download your configuration.</p>
+<p>Follow the <a href="https://github.com/Microsoft/vscode-tips-and-tricks" target="_blank">Basics Tips &amp; Tricks</a> including installing the <strong>CLI Tool</strong>.</p>
+<h2 id="configure-vs-code-for-your-language">Configure VS Code for your Language</h2>
+<ul>
+<li><a href="https://github.com/viatsko/awesome-vscode" target="_blank">Awesome VSCode with settings for different language</a></li>
+<li><a href="https://github.com/Microsoft/vscode-recipes" target="_blank">vscode-recipes</a>: for Debugging different languages JS, React, Typescript, Docker</li>
+</ul>
+<h2 id="extensions">Extensions</h2>
+<ul>
+<li>Debugging Client and Server with <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank">Compound Launch Configurations</a> and Debug with mid-line breakpoints promises with Column Breakpoints</li>
+<li>Paring with Visual Studio Live Share<ul>
+<li>More Info: <a href="https://code.visualstudio.com/blogs/2017/11/15/live-share" target="_blank">https://code.visualstudio.com/blogs/2017/11/15/live-share</a></li>
+<li>Security: <a href="https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/security" target="_blank">https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/security</a></li>
+<li>Add this to your config: <code>&quot;liveshare.guestApprovalRequired&quot;: true</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="python-setup">Python Setup</h2>
+<ul>
+<li><a href="https://realpython.com/python-development-visual-studio-code/" target="_blank">https://realpython.com/python-development-visual-studio-code/</a></li>
+<li><a href="https://fedoramagazine.org/vscode-python-howto/" target="_blank">https://fedoramagazine.org/vscode-python-howto/</a></li>
+</ul>
+<script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
                             
@@ -716,12 +733,12 @@ you should make sure everything is working by running:</p>
 
             
                 
-                <a href="../Xcode/" class="navigation navigation-prev " aria-label="Previous page: Xcode">
+                <a href="../Vim/" class="navigation navigation-prev " aria-label="Previous page: Vim">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Usage.html" class="navigation navigation-next " aria-label="Next page: Usage">
+                <a href="../Python/" class="navigation navigation-next " aria-label="Next page: Python">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -732,7 +749,7 @@ you should make sure everything is working by running:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Homebrew","level":"1.4","depth":1,"next":{"title":"Usage","level":"1.4.1","depth":2,"path":"Homebrew/Usage.md","ref":"Homebrew/Usage.md","articles":[]},"previous":{"title":"Xcode","level":"1.3","depth":1,"path":"Xcode/README.md","ref":"Xcode/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"Homebrew/README.md","mtime":"2019-05-04T10:39:30.684Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-04T20:18:19.678Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VSC","level":"1.9","depth":1,"next":{"title":"Python","level":"1.10","depth":1,"path":"Python/README.md","ref":"Python/README.md","articles":[{"title":"Pip","level":"1.10.1","depth":2,"path":"Python/pip.md","ref":"Python/pip.md","articles":[]},{"title":"Virtualenv","level":"1.10.2","depth":2,"path":"Python/virtualenv.md","ref":"Python/virtualenv.md","articles":[]},{"title":"Numpy-Scipy","level":"1.10.3","depth":2,"path":"Python/numpy.md","ref":"Python/numpy.md","articles":[]},{"title":"IPython","level":"1.10.4","depth":2,"path":"Python/ipython.md","ref":"Python/ipython.md","articles":[]}]},"previous":{"title":"Vim","level":"1.8","depth":1,"path":"Vim/README.md","ref":"Vim/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"VisualStudioCode/README.md","mtime":"2019-05-04T20:14:22.418Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-04T20:18:19.678Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
