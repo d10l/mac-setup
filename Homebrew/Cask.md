@@ -61,5 +61,6 @@ $ brew cask install \
     qbittorrent \
     dbeaver-community \
     vlc \
-    visual-studio-code
+    visual-studio-code \
+    keybase
 ```

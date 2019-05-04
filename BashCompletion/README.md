@@ -4,6 +4,12 @@ Bash completion is a bash function that allows you to auto complete commands or
 arguments by typing partially commands or arguments, then pressing the [Tab]
 key. This will help you when writing the bash command in terminal.
 
+__For ZSH use and do NOT install bash-completions__:
+
+```sh
+brew install zsh-completions
+```
+
 ## Installation
 
 ```bash

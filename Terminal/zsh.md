@@ -61,7 +61,7 @@ Add plugins to your shell by adding the name of the plugin to the `plugin`
 array in your `.zshrc`.
 
 ```sh
-plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
+plugins=(git git-extras python vscode pip osx npm  zsh-syntax-highlighting docker autojump history)
 ```
 
 You'll find a list of all plugins on the [Oh My Zsh Wiki](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins).
@@ -73,8 +73,14 @@ Changing theme is as simple as changing a string in your configuration file.
 The default theme is `robbyrussell`. Just change that value to change theme,
 and don't forget to apply your changes.
 
+[Install](https://gist.github.com/denseidel/c8e46d9cab1462e6c086c4b8bb55ff90) the [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k) by running 
+
 ```sh
-ZSH_THEME=pygmalion
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+
+```sh
+ZSH_THEME=powerlevel9k/powerlevel9k
 ```
 
 You'll find a list of themes with screenshots on the
@@ -172,4 +178,13 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 # Example aliases
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias g='git'
+
+# set aws profile variables
+export AWS_ACCESS_KEY_ID=$(lpass show aws-denseidel-dennis --username)
+export AWS_SECRET_ACCESS_KEY=$(lpass show aws-denseidel-dennis --password)
+export AWS_DEFAULT_REGION=eu-central-1
+# Allianz GHE refresh alias
+alias ghe-refresh="adp-2fa c --global --offline_token $HOME/.git/adp-secrets/offline.token --access_token $HOME/.git/adp-secrets/access.token"
+# config github access token
+export GITHUB_TOKEN=$(lpass show github --password)
 ```
