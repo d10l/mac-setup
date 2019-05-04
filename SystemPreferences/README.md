@@ -14,34 +14,24 @@ suggestions. Always choose the setting that makes the most sense to you.**
 
 ## Users & Groups
 
-- _Login Options_ -> _Change fast user switching menu as Icon_
-- Set up _Password_, _Apple ID_, _Picture_, etc.
+<img src="./users-groups.png" width="80%" />
 
 ## Trackpad
 
-- _Point & Click_
-    - Enable _Tap to click with one finger_
-    - Change _Secondary click_ to _Right corner_
-    - Uncheck _Three Finger Drag_
-- _Scroll & Zoom_
-    - Uncheck _all_ apart from _Zoom in and out_
+<img src="./trackpad-pointclick.png" width="80%" />
+
+<img src="./trackpad-scrollzoom.png" width="80%" />
+
+<img src="./trackpad-moregestures.png" width="80%" />
 
 ## Dock
 
-- _Visual Settings_
-    - _Change position_ to _Left_ and _make the size_ of icons _Small_
-- _Other settings_
-    - Remove _workspace auto-switching_ by running the following command:
-
-```shell
-$ defaults write com.apple.dock workspaces-auto-swoosh -bool NO
-$ killall Dock # Restart the Dock process
-```
+<img src="./dock.png" width="80%" />
 
 ## Finder
 
 - General
-    - Change _New finder window show_ to open in your _Home Directory_
+    - Change _New finder window show_ to open in your _Google Drive Folder_
 - Sidebar
     - Add _Home_ and your _Code Directory_
     - Uncheck all _Shared_ boxes
@@ -49,28 +39,19 @@ $ killall Dock # Restart the Dock process
 ## Menubar
 
 - Remove the _Display_ and _Bluetooth_ icons
-- Change _battery_ to _Show percentage symbols_
 
 ## Spotlight
 
 - Uncheck _fonts_, _images_, _files_ etc.
-- Uncheck the _keyboard shortcuts_ as we'll be replacing them with
-  [_Alfred_](https://www.alfredapp.com/)
 
 ## Accounts
 
-- Add an _iCloud account_ and sync _Calendar_, _Find my Mac_, _Contacts_ etc.
+- Add an _iCloud & Google Accountß account_ and sync _Calendar_, _Find my Mac_, _Contacts_ etc.
 
 ## User Defaults
 
-- Enable _repeating keys by pressing and holding down keys_: `defaults write
-  NSGlobalDomain ApplePressAndHoldEnabled -bool false` (and restart any app
+- Enable _repeating keys by pressing and holding down keys_ for terminal & visual studio code: `defaults delete -g ApplePressAndHoldEnabled && defaults write -app Terminal ApplePressAndHoldEnabled -bool false && defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false` (and restart any app
   that you need to repeat keys in)
-- Change the _default folder for screenshots_
-    - Open the terminal and create the folder where you would like to store
-      your screenshots: `mkdir -p /path/to/screenshots/`
-    - Then run the following command: `defaults write com.apple.screencapture
-      location /path/to/screenshots/ && killall SystemUIServer`
 
 ## How to write to NTFS on macOS Yosemite (10.10) and El Capitan (10.11)
 
