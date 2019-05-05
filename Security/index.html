@@ -60,7 +60,7 @@
 
     
     
-    <link rel="prev" href="../Apps/Settings.html" />
+    <link rel="prev" href="../Apps/" />
     
 
     </head>
@@ -491,20 +491,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.18" data-path="../Vagrant/">
-            
-                <a href="../Vagrant/">
-            
-                    
-                    Vagrant
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.19" data-path="../Docker/">
+        <li class="chapter " data-level="1.18" data-path="../Docker/">
             
                 <a href="../Docker/">
             
@@ -518,7 +505,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.19.1" data-path="../Docker/UsefulCommands.html">
+        <li class="chapter " data-level="1.18.1" data-path="../Docker/UsefulCommands.html">
             
                 <a href="../Docker/UsefulCommands.html">
             
@@ -531,7 +518,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.19.2" data-path="../Docker/TipsAndTricks.html">
+        <li class="chapter " data-level="1.18.2" data-path="../Docker/TipsAndTricks.html">
             
                 <a href="../Docker/TipsAndTricks.html">
             
@@ -549,7 +536,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.20" data-path="../LaTeX/">
+        <li class="chapter " data-level="1.19" data-path="../LaTeX/">
             
                 <a href="../LaTeX/">
             
@@ -562,7 +549,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.21" data-path="../Apps/">
+        <li class="chapter " data-level="1.20" data-path="../Apps/">
             
                 <a href="../Apps/">
             
@@ -573,41 +560,9 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.21.1" data-path="../Apps/Octave.html">
-            
-                <a href="../Apps/Octave.html">
-            
-                    
-                    Octave
-            
-                </a>
-            
-
-            
         </li>
     
-        <li class="chapter " data-level="1.21.2" data-path="../Apps/Settings.html">
-            
-                <a href="../Apps/Settings.html">
-            
-                    
-                    App Settings
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.22" data-path="./">
+        <li class="chapter active" data-level="1.21" data-path="./">
             
                 <a href="./">
             
@@ -700,7 +655,27 @@
 <li>Follow the instructions. In my opinion you should create a local and offline possibility to disable encryption, when you are asked how to regain access in case of anything.</li>
 </ol>
 <h2 id="config--keybase">Config &amp; Keybase</h2>
-<p>also add terraform  </p>
+<p>Store your secret configuration files using <a href="https://keybase.io/" target="_blank">keybase.io</a> in a shared but end to end encrypted folder, and git repositories.</p>
+<ol>
+<li>Install the <a href="https://keybase.io/docs/the_app/install_macos" target="_blank">Keybase app</a>  <code>brew cask install keybase</code></li>
+<li>Install the GPG suite <code>brew cask install gpg-suite</code></li>
+<li>If you don&apos;t have a GPG key already create a new GPG key <code>keybase pgp gen</code> otherwise just import your existing key with <code>keybase pgp select</code>.</li>
+</ol>
+<h3 id="sign-git-commits">Sign git commits</h3>
+<ol>
+<li>Grab the public key using <code>keybase pgp export</code>, then feed it into GitHub described <a href="https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account" target="_blank">here</a>.</li>
+<li><code>git config --global user.signingkey &lt;my_key_ID&gt;</code> &#x2013; Tell my local git to use my GPG key for signing (<a href="https://help.github.com/en/articles/telling-git-about-your-signing-key" target="_blank">how to get my key id</a>)</li>
+<li><code>git config --global commit.gpgsign true</code> &#x2013; Enable GPG commit signing</li>
+<li>What you end up with are commits that have the &#x201C;Verified&#x201D; label in GitHub, which is an affirmation that I was actually the one who made those commits.</li>
+</ol>
+<h3 id="share-secrets-config-files-with-devops-pipeline">Share secrets config files with devops pipeline</h3>
+<ol>
+<li>create a seperate account &amp; generate a <a href="https://keybase.io/docs/command_line/basics" target="_blank">paperkey</a> for this account with <code>keybase paperkey</code>. with this paper key you can now login from your cicd pipeline using your username (not email!) and the paperkey.<ol>
+<li><code>keybase oneshot  --paperkey xxx -u username</code> for more infos do <code>man keybase oneshot</code> or look at an <a href="https://gitlab.com/open-source-devex/containers/keybase/blob/master/container/build-docker-entrypoint.sh" target="_blank">example</a></li>
+<li>Publish the relevant crednetials files to <code>/keybase/private/dennisseidel,cicdbotname</code> or to your <code>teams</code> folder.</li>
+</ol>
+</li>
+</ol>
 <h2 id="lastpass">LastPass</h2>
 <h2 id="securely-store-your-keys-and-secrets">Securely store your keys and secrets</h2>
 <p>You don&apos;t want to store your secrets in plain text in a file like <code>.rshrc</code>  therefore you can use lpass cli [<a href="https://github.com/lastpass/lastpass-cli" target="_blank">github</a> / <a href="https://helpdesk.lastpass.com/lastpass-command-line-application/" target="_blank">documentation</a>] and store your secrets in your osx keychain and access them only by reference.</p>
@@ -752,7 +727,7 @@ unlock-secret-files
 
             
                 
-                <a href="../Apps/Settings.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: App Settings">
+                <a href="../Apps/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Other Apps">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -764,7 +739,7 @@ unlock-secret-files
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Security","level":"1.22","depth":1,"previous":{"title":"App Settings","level":"1.21.2","depth":2,"path":"Apps/Settings.md","ref":"Apps/Settings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"Security/README.md","mtime":"2019-05-04T20:11:37.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-04T20:18:19.678Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Security","level":"1.21","depth":1,"previous":{"title":"Other Apps","level":"1.20","depth":1,"path":"Apps/README.md","ref":"Apps/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"Security/README.md","mtime":"2019-05-05T13:31:14.996Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T13:34:27.710Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
