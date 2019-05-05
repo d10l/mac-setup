@@ -44,7 +44,24 @@ The following steps were taken from the [official apple support page](https://su
 
 ## Config & Keybase
 
-also add terraform  
+Store your secret configuration files using [keybase.io](https://keybase.io/) in a shared but end to end encrypted folder, and git repositories.
+
+1. Install the [Keybase app](https://keybase.io/docs/the_app/install_macos)  `brew cask install keybase`
+2. Install the GPG suite `brew cask install gpg-suite`
+3. If you don't have a GPG key already create a new GPG key `keybase pgp gen` otherwise just import your existing key with `keybase pgp select`.
+
+### Sign git commits
+
+1. Grab the public key using `keybase pgp export`, then feed it into GitHub described [here](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account).
+2. `git config --global user.signingkey <my_key_ID>` – Tell my local git to use my GPG key for signing ([how to get my key id](https://help.github.com/en/articles/telling-git-about-your-signing-key))
+3. `git config --global commit.gpgsign true` – Enable GPG commit signing
+4. What you end up with are commits that have the “Verified” label in GitHub, which is an affirmation that I was actually the one who made those commits.
+
+### Share secrets config files with devops pipeline
+
+1. create a seperate account & generate a [paperkey](https://keybase.io/docs/command_line/basics) for this account with `keybase paperkey`. with this paper key you can now login from your cicd pipeline using your username (not email!) and the paperkey.
+   1. `keybase oneshot  --paperkey xxx -u username` for more infos do `man keybase oneshot` or look at an [example](https://gitlab.com/open-source-devex/containers/keybase/blob/master/container/build-docker-entrypoint.sh)
+   2. Publish the relevant crednetials files to `/keybase/private/dennisseidel,cicdbotname` or to your `teams` folder.
 
 ## LastPass
 

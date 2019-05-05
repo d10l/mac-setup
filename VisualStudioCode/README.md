@@ -22,13 +22,13 @@ brew cask install visual-studio-code
 
 ## Configuration & Basics
 
-With the [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync&WT.mc_id=vscode-smashing-buhollan) extension, you can export all of your VS Code settings to a Gist, and then pull them all down from another VS Code installation and have them immediately applied. `Install the extension` > Call `F12` and search for `sync` > configure with your github key and then download your configuration.
+With the [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync&WT.mc_id=vscode-smashing-buhollan) extension, you can export all of your VS Code settings to a Gist, and then pull them all down from another VS Code installation and have them immediately applied. `Install the extension` > Call `F12` and search for `sync` > configure with your github key and then download your configuration ([my settings](https://gist.github.com/denseidel/357d38d2a99c88f8d2cc5f5ca0e2d1b5)).
 
 Follow the [Basics Tips & Tricks](https://github.com/Microsoft/vscode-tips-and-tricks) including installing the __CLI Tool__.
 
 ## Configure VS Code for your Language
 
-- [Awesome VSCode with settings for different language](https://github.com/viatsko/awesome-vscode)
+- [Awesome VSCode](https://github.com/viatsko/awesome-vscode): with settings for different language JS, Typescript, Python
 - [vscode-recipes](https://github.com/Microsoft/vscode-recipes): for Debugging different languages JS, React, Typescript, Docker
 
 ## Extensions
