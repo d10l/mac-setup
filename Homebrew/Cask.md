@@ -62,5 +62,6 @@ $ brew cask install \
     dbeaver-community \
     vlc \
     visual-studio-code \
-    keybase
+    keybase \
+    intellij-idea
 ```
