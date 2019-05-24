@@ -1,4 +1,4 @@
-# Node.js
+# Node.js / JS / Typescript
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 
@@ -52,3 +52,7 @@ To upgrade all or a particular package:
 To uninstall a package:
 
     $ npm uninstall [-g] <package>
+
+## Typescript: Installation and Configuration
+
+https://scotch.io/@nwayve/how-to-build-a-lambda-function-in-typescript
