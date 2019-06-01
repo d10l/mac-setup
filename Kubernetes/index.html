@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Bash Completion · macOS Setup Guide</title>
+        <title>Kubernetes · macOS Setup Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Vim/" />
+    <link rel="next" href="../Terraform/" />
     
     
-    <link rel="prev" href="../Git/gitignore.html" />
+    <link rel="prev" href="../Docker/TipsAndTricks.html" />
     
 
     </head>
@@ -273,9 +273,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="./">
+        <li class="chapter " data-level="1.7" data-path="../BashCompletion/">
             
-                <a href="./">
+                <a href="../BashCompletion/">
             
                     
                     Bash Completion
@@ -538,9 +538,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.19" data-path="../Kubernetes/">
+        <li class="chapter active" data-level="1.19" data-path="./">
             
-                <a href="../Kubernetes/">
+                <a href="./">
             
                     
                     Kubernetes
@@ -633,7 +633,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Bash Completion</a>
+        <a href=".." >Kubernetes</a>
     </h1>
 </div>
 
@@ -648,45 +648,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bash-completion">Bash Completion</h1>
-<p>Bash completion is a bash function that allows you to auto complete commands or
-arguments by typing partially commands or arguments, then pressing the [Tab]
-key. This will help you when writing the bash command in terminal.</p>
-<p><strong>For ZSH use and do NOT install bash-completions</strong>:</p>
-<pre><code class="lang-sh">brew install zsh-completions
+                                <h1 id="kubernetes">Kubernetes</h1>
+<h2 id="minikube">Minikube</h2>
+<p><a href="https://github.com/kubernetes/minikube/" target="_blank">Minikube</a> runs kubernetes locally within a vm. Read about the <a href="https://github.com/kubernetes/minikube/#features" target="_blank">feature</a>.</p>
+<p><a href="https://docs.bitnami.com/kubernetes/get-started-kubernetes/#step-4-install-helm-and-tiller" target="_blank">https://docs.bitnami.com/kubernetes/get-started-kubernetes/#step-4-install-helm-and-tiller</a></p>
+<h3 id="install"><a href="https://kubernetes.io/docs/tasks/tools/install-minikube/" target="_blank">Install</a></h3>
+<pre><code class="lang-bash">brew install minikube
 </code></pre>
-<h2 id="installation">Installation</h2>
-<pre><code class="lang-bash">$ brew install bash-completion
+<h3 id="run">Run</h3>
+<pre><code class="lang-bash">minikube start --memory=5120 --cpus=3 --vm-driver=hyperkit --bootstrapper=kubeadm
 </code></pre>
-<p>Bash completion will be installed in <code>/usr/local/etc/bash_completion.d</code>.</p>
-<p>For it to work, add this to your <code>~/.bash_profile</code>:</p>
-<pre><code class="lang-bash">[ <span class="hljs-_">-f</span> /usr/<span class="hljs-built_in">local</span>/etc/bash_completion ] &amp;&amp; . /usr/<span class="hljs-built_in">local</span>/etc/bash_completion
+<h3 id="more-features">More Features</h3>
+<ul>
+<li><a href="https://github.com/kubernetes/minikube/blob/master/docs/networking.md#loadbalancer-emulation-minikube-tunnel" target="_blank">Load Balancer Emulation</a></li>
+</ul>
+<h2 id="create-deployment-k8s-files-or-helm-chharts">Create Deployment k8s files or Helm chharts</h2>
+<h3 id="kubernetes-files">Kubernetes files</h3>
+<pre><code>mkdir k8s
+cd k8s
+</code></pre><h3 id="helm">Helm</h3>
+<h3 id="install">Install</h3>
+<p><a href="https://docs.bitnami.com/kubernetes/get-started-kubernetes/#step-4-install-helm-and-tiller" target="_blank">https://docs.bitnami.com/kubernetes/get-started-kubernetes/#step-4-install-helm-and-tiller</a></p>
+<h3 id="create-chart">Create Chart</h3>
+<p><a href="https://docs.bitnami.com/kubernetes/how-to/create-your-first-helm-chart/" target="_blank">https://docs.bitnami.com/kubernetes/how-to/create-your-first-helm-chart/</a></p>
+<h2 id="skaffold"><a href="https://skaffold.dev/docs/" target="_blank">Skaffold</a></h2>
+<p>Adds &quot;hot container reloading&quot; to kubernetes.</p>
+<p><a href="https://skaffold.dev/docs/getting-started/" target="_blank">https://skaffold.dev/docs/getting-started/</a></p>
+<h3 id="install">Install</h3>
+<pre><code class="lang-bash">brew install skaffold
 </code></pre>
-<p>Or simply type:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[ -f /usr/local/etc/bash_completion ] &amp;&amp; . /usr/local/etc/bash_completion&quot;</span> &gt;&gt; ~/.bash_profile
+<ul>
+<li><a href="https://stackoverflow.com/questions/50359633/use-of-skaffold-using-minikube-without-registry" target="_blank">https://stackoverflow.com/questions/50359633/use-of-skaffold-using-minikube-without-registry</a></li>
+<li><a href="https://skaffold.dev/docs/how-tos/deployers/" target="_blank">https://skaffold.dev/docs/how-tos/deployers/</a></li>
+</ul>
+<p>Disable Portforwarding</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">export</span> SKAFFOLD_PORT_FORWARD=<span class="hljs-literal">false</span>
 </code></pre>
-<p>Restart your bash session:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">source</span> ~/.bash_profile
-</code></pre>
-<h2 id="usage">Usage</h2>
-<p>Once you&apos;ve done this, you can use bash completion by pressing the tab key
-twice after a command. For example:</p>
-<pre><code class="lang-bash">$ git [tab] [tab]
-add            blame          cherry-pick    config         format-patch   gui            merge          push           repack         rm             stage          whatchanged
-am             branch         citool         describe       fsck           <span class="hljs-built_in">help</span>           mergetool      range-diff     replace        send-email     stash          worktree
-apply          bundle         clean          diff           gc             init           mv             rebase         request-pull   shortlog       status
-archive        checkout       <span class="hljs-built_in">clone</span>          difftool       gitk           instaweb       notes          reflog         reset          show           submodule
-bisect         cherry         commit         fetch          grep           <span class="hljs-built_in">log</span>            pull           remote         revert         show-branch    tag
-</code></pre>
-<h2 id="more">More</h2>
-<p>You can list additional completion packages are available by typing:</p>
-<pre><code class="lang-bash">$ brew search completion
-</code></pre>
-<p>And you can install them using <code>brew install</code> commands, for example:</p>
-<pre><code class="lang-bash">$ brew install docker-completion
-</code></pre>
-<p><em>You can also manually add a bash completion file into
-<code>/usr/local/etc/bash_completion.d</code></em></p>
 <script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -714,12 +711,12 @@ bisect         cherry         commit         fetch          grep           <span
 
             
                 
-                <a href="../Git/gitignore.html" class="navigation navigation-prev " aria-label="Previous page: Git Ignore">
+                <a href="../Docker/TipsAndTricks.html" class="navigation navigation-prev " aria-label="Previous page: Tips and Tricks">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../Vim/" class="navigation navigation-next " aria-label="Next page: Vim">
+                <a href="../Terraform/" class="navigation navigation-next " aria-label="Next page: Terraform">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -730,7 +727,7 @@ bisect         cherry         commit         fetch          grep           <span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bash Completion","level":"1.7","depth":1,"next":{"title":"Vim","level":"1.8","depth":1,"path":"Vim/README.md","ref":"Vim/README.md","articles":[]},"previous":{"title":"Git Ignore","level":"1.6.1","depth":2,"path":"Git/gitignore.md","ref":"Git/gitignore.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"BashCompletion/README.md","mtime":"2019-05-05T13:34:43.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-01T10:20:38.997Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Kubernetes","level":"1.19","depth":1,"next":{"title":"Terraform","level":"1.20","depth":1,"path":"Terraform/README.md","ref":"Terraform/README.md","articles":[]},"previous":{"title":"Tips and Tricks","level":"1.18.2","depth":2,"path":"Docker/TipsAndTricks.md","ref":"Docker/TipsAndTricks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"analytics":{"google":"UA-40495390-3"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":36,"bottom":36},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"macOS Setup Guide","language":"en","links":{"home":"http://sourabhbajaj.com/mac-setup/","about":"http://sourabhbajaj.com","issues":null,"contribute":null},"gitbook":"3.2.3","direction":"ltr"},"file":{"path":"Kubernetes/README.md","mtime":"2019-05-19T18:23:39.607Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-01T10:20:38.997Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
