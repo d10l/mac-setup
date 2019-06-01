@@ -53,6 +53,12 @@ To uninstall a package:
 
     $ npm uninstall [-g] <package>
 
-## Typescript: Installation and Configuration
+## Typescript
+
+### Installation and Configuration
 
 https://scotch.io/@nwayve/how-to-build-a-lambda-function-in-typescript
+
+### Develop Typescript Backend
+
+As typescript is a transpiled language you develop your app like in this [example project](https://github.com/denseidel/ts-express-sample) / [more mature sample](https://github.com/aherve/typescript-express-docker).
