@@ -55,10 +55,25 @@ To uninstall a package:
 
 ## Typescript
 
-### Installation and Configuration
+### Project Setup
 
-https://scotch.io/@nwayve/how-to-build-a-lambda-function-in-typescript
-
+```bash
+# create project folder
+mkdir sample-project
+# initialize the npm repo
+npm init -y
+# initalize the typescript project within your repo (will generate the tsconfig that defines how the ts code is transpiled to js)
+npx tsc --init
+# install node types
+npm i -D @types/node
+```
 ### Develop Typescript Backend
 
-As typescript is a transpiled language you develop your app like in this [example project](https://github.com/denseidel/ts-express-sample) / [more mature sample](https://github.com/aherve/typescript-express-docker).
+As typescript is a transpiled language you develop your app like in this [example project](https://github.com/denseidel/ts-express-sample) / [more mature sample](https://github.com/aherve/typescript-express-docker). For a aws lambda sample follow [here](https://scotch.io/@nwayve/how-to-build-a-lambda-function-in-typescript
+).
+
+## Basics
+
+* The basics are explained in the offical [Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+* Anotate existing npm packeges with types with a [delcaration file](https://basarat.gitbooks.io/typescript/docs/types/ambient/d.ts.html). You can use [dts-gen](https://medium.com/@jonjam/getting-started-with-typescript-type-definitions-1cda7094b8d2) to make it easier.
+* How to export [modules](https://www.typescriptlang.org/docs/handbook/modules.html).

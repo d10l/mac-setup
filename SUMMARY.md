@@ -29,7 +29,7 @@
 - [Scala](Scala/README.md)
 - [Ruby](Ruby/README.md)
   - [RubyGems](Ruby/RubyGems.md)
-- [Node.js](Node.js/README.md)
+- [Typescript & Node.js](Node.js&Typescript/README.md)
 - [Go](Go/README.md)
 - [Docker](Docker/README.md)
   - [Useful Commands](Docker/UsefulCommands.md)

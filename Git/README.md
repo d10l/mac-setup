@@ -171,3 +171,11 @@ brew install hub
 # https://hub.github.com/hub.1.html
 git config --global hub.protocol https
 ```
+
+### [Meta](https://github.com/mateodelnorte/meta) to integrate multiple repos into one meta repo
+
+meta is a tool for managing multi-project systems and libraries.
+
+```bash
+npm i -g meta
+```
