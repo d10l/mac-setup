@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-readonly commands=(python git gitbook cp)
+#readonly commands=(python git gitbook cp)
 
 # Make sure we don't push unrelated changes
 if [[ $(git status -s | wc -l) -gt 0 ]]; then
@@ -8,14 +8,14 @@ if [[ $(git status -s | wc -l) -gt 0 ]]; then
   exit 1
 fi
 
-function is_available {
-  command -v $1 >/dev/null 2>&1 ||
-    { echo >&2 "🚨 I require $1 but it's not installed. Aborting."; exit 1; }
-}
+#function is_available {
+#  command -v $1 >/dev/null 2>&1 ||
+#    { echo >&2 "🚨 I require $1 but it's not installed. Aborting."; exit 1; }
+#}
 
 # Make sure all executables are available on $PATH
-for cmd in ${commands[@]}; do is_available "$cmd"; done
-echo "✅ All required packages are available, will continue"
+#for cmd in ${commands[@]}; do is_available "$cmd"; done
+#echo "✅ All required packages are available, will continue"
 
 #echo "👥 Updating list of contributors.."
 # python ./scripts/contributors.py
