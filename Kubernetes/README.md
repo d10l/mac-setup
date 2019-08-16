@@ -26,7 +26,7 @@ minikube start --memory=5120 --cpus=3 --vm-driver=hyperkit --bootstrapper=kubead
 
 ### Kubernetes files
 
-```
+```bash
 mkdir k8s
 cd k8s
 ```

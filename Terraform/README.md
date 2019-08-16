@@ -10,7 +10,7 @@ brew install terraform
 
 ## Usage
 
-[Configure](https://learn.hashicorp.com/terraform/getting-started/build) the provider you need (e.g. AWS). 
+[Configure](https://learn.hashicorp.com/terraform/getting-started/build) the provider you need (e.g. AWS).
 
 Initialize the repository
 
@@ -38,13 +38,9 @@ Input Variables: https://learn.hashicorp.com/terraform/getting-started/variables
 
 Output Variables: https://learn.hashicorp.com/terraform/getting-started/outputs
 
-Store State remotely (s3): 
+Store State remotely (s3):
 * https://learn.hashicorp.com/terraform/getting-started/remote
 * https://medium.com/@jessgreb01/how-to-terraform-locking-state-in-s3-2dc9a5665cb6
 
-
-
 Developer: https://learn.hashicorp.com/terraform/?track=development#development
 Operations: https://learn.hashicorp.com/terraform/?track=operations#operations
-
-
