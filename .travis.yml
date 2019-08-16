@@ -3,4 +3,4 @@ cache: yarn
 node_js:
   - "8"
 install: make deps
-script: make ci && make deploy
+script: make deploy
