@@ -1,6 +1,7 @@
 language: node_js
 cache: yarn
 node_js:
-- "8"
+  - "8"
 install: make deps
 script: make ci
+deploy: make deploy
