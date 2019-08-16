@@ -42,6 +42,8 @@ git add .
 readonly HASH=$(git rev-parse --short HEAD)
 git commit -a -m "Deploy version with hash $HASH"
 
+git remote set-url --push origin https://denseidel:${GITHUB_TOKEN}@github.com/d10l/mac-setup.git
+
 git push origin HEAD:gh-pages
 git checkout master
 
