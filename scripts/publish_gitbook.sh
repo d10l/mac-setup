@@ -3,10 +3,10 @@
 #readonly commands=(python git gitbook cp)
 
 # Make sure we don't push unrelated changes
-if [[ $(git status -s | wc -l) -gt 0 ]]; then
-  echo "🚨 You have changed files. Aborting."
-  exit 1
-fi
+#if [[ $(git status -s | wc -l) -gt 0 ]]; then
+#  echo "🚨 You have changed files. Aborting."
+#  exit 1
+#fi
 
 #function is_available {
 #  command -v $1 >/dev/null 2>&1 ||
@@ -42,7 +42,7 @@ git add .
 readonly HASH=$(git rev-parse --short HEAD)
 git commit -a -m "Deploy version with hash $HASH"
 
-git push origin gh-pages
+git push origin HEAD:gh-pages
 git checkout master
 
 echo "😎 Finished building and deploying new version of guide"
