@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     "title": "Mac OS X Setup Guide ",
 
@@ -23,6 +24,8 @@
         }
     }
 =======
+=======
+>>>>>>> Add Contribution header to README + minor refactorings
   "title": "macOS Setup Guide",
   "language": "en",
   "direction": "ltr",
@@ -53,5 +56,8 @@
       "google": "UA-40495390-3"
     }
   }
+<<<<<<< HEAD
 >>>>>>> Merge pull request #213 from sb2nov/cleanup
+=======
+>>>>>>> Add Contribution header to README + minor refactorings
 }

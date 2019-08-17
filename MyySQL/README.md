@@ -33,11 +33,17 @@ To connect with the command-line client, run:
 
 ## GUI Tool
 <<<<<<< HEAD
+<<<<<<< HEAD
 It is always nice to have a GUI tool for managing databases. For Mac, you can use [SequelPro](http://www.sequelpro.com/) to manage local and remote MySQL databases. It is a free tool, you can choose to donate to support the development. 
 =======
+=======
+>>>>>>> Add Contribution header to README + minor refactorings
 It is always nice to have a GUI tool for managing databases. For Mac, you can use [Sequel Pro](http://www.sequelpro.com/) to manage local and remote MySQL databases. It is a free tool, you can choose to donate to support the development.
 
 You may install Sequel Pro using [homebrew](http://sourabhbajaj.com/mac-setup/Homebrew/Cask.html):
 
     $ brew cask install sequel-pro
+<<<<<<< HEAD
 >>>>>>> Merge pull request #213 from sb2nov/cleanup
+=======
+>>>>>>> Add Contribution header to README + minor refactorings
