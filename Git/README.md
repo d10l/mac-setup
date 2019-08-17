@@ -2,11 +2,15 @@
 
 What's a developer without [Git](http://git-scm.com/)? To install, run:
 
-    $ brew install git
+```sh
+brew install git
+```
 
 When done, to test that it installed properly you can run:
 
-    $ git --version
+```sh
+git --version
+```
 
 And `which git` should output `/usr/local/bin/git`.
 
@@ -14,8 +18,8 @@ Next, we'll define your Git user (should be the same name and email you use for
 [GitHub](https://github.com/)):
 
 ```sh
-$ git config --global user.name "Your Name Here"
-$ git config --global user.email "your_email@youremail.com"
+git config --global user.name "Your Name Here"
+git config --global user.email "your_email@youremail.com"
 ```
 
 They will get added to your `.gitconfig` file.
@@ -26,7 +30,9 @@ password every time you push a commit you can cache your credentials by running
 the following command, as described in the
 [instructions](https://help.github.com/articles/caching-your-github-password-in-git/).
 
-    $ git config --global credential.helper osxkeychain
+```sh
+git config --global credential.helper osxkeychain
+```
 
 ## SSH Config for GitHub
 
@@ -39,7 +45,7 @@ First, we need to check for existing SSH keys on your computer. We do this by
 running:
 
 ```sh
-$ ls -al ~/.ssh
+ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
 ```
 
@@ -55,7 +61,7 @@ email. The default settings are preferred, so when you're asked to "enter a
 file in which to save the key,"" just press Enter to continue.
 
 ```sh
-$ ssh-keygen -t rsa -C "your_email@example.com"
+ssh-keygen -t rsa -C "your_email@example.com"
 # Creates a new ssh key, using the provided email as a label
 ```
 
@@ -64,7 +70,7 @@ $ ssh-keygen -t rsa -C "your_email@example.com"
 Run the following commands to add your SSH key to the `ssh-agent`.
 
 ```sh
-$ eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)"
 ```
 
 If you're running macOS Sierra 10.12.2 or later, you will need to modify your
@@ -82,7 +88,7 @@ No matter what operating system version you run you need to run this command to
 complete this step:
 
 ```sh
-$ ssh-add -K ~/.ssh/id_rsa
+ssh-add -K ~/.ssh/id_rsa
 ```
 
 ### Adding a new SSH key to your GitHub account
@@ -90,12 +96,16 @@ $ ssh-add -K ~/.ssh/id_rsa
 The last step is to let GitHub know about your SSH key. Run this command to copy your key to your clipboard:
 
 ```sh
-$ pbcopy < ~/.ssh/id_rsa.pub
+pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 Then go to GitHub and [input your new SSH
 key](https://github.com/settings/ssh/new). Paste your key in the "Key" textbox
 and pick a name that represents the computer you're currently using.
+
+## Credential Config
+
+https://web.archive.org/web/20190817090903/https://coolaj86.com/articles/vanilla-devops-git-credentials-cheatsheet/
 
 ## Setup a template for git to prevent checking in credentials
 
@@ -161,16 +171,6 @@ If you want to go “all in” and ensure that every repo has the proper hooks, 
 ## Git Best Pratices
 
 Read [Single Branch Development with Git](https://medium.com/learn-git-today/single-branch-development-with-git-f72a052446cf) and [global commit messages](https://eidson.info/post/using-conventional-commit-messages-globally) following the [angular commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines).
-
-### [Github CLI](https://hub.github.com/)
-
-Install:
-
-```bash
-brew install hub
-# https://hub.github.com/hub.1.html
-git config --global hub.protocol https
-```
 
 ### [Meta](https://github.com/mateodelnorte/meta) to integrate multiple repos into one meta repo
 
